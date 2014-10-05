@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Data Src - example</title>
+    <title>Bootstrap Data Src - example</title>
 
     <link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+
     <style>
     .thumbnail.datasrc {
         background-position: 50% 50%;
@@ -133,15 +134,15 @@
 
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-    <script src="../src/bootstrap-data-img.js"></script>
+    <script src="bootstrap-data-src.js"></script>
     <script>
     $(document).ready(function () {
-        $('.datasrc').dataImg({
+        $('.datasrc').dataSrc({
             resize: true
         });
 
         // inview = lazyload
-        $('.datasrc-inview').dataImg({
+        $('.datasrc-inview').dataSrc({
             inview: true
         });
     });

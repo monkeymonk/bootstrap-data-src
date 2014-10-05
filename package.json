@@ -1,6 +1,6 @@
 {
-  "name": "bootstrap-data-src",
-  "version": "0.0.1-1",
+  "name": "bootstrap-data-img",
+  "version": "1.0.0",
   "description": "Tiny jQuery plugin to deal with responsive image delivery using Bootstrap breakpoints.",
   "private": true,
   "homepage": "",
@@ -33,7 +33,6 @@
     "grunt-contrib-concat": "~0.3.0",
     "grunt-contrib-uglify": "~0.4",
     "grunt-contrib-watch": "~0.6",
-    "grunt-html-build": "^0.3.2",
     "grunt-notify": "*",
     "grunt-todo": "~0.2",
     "matchdep": "~0.3",

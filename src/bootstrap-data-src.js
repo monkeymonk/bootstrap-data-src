@@ -1,21 +1,24 @@
 /**
  * Created by monkeymonk on 29/04/14.
+<<<<<<< HEAD
  *
  * @denpency jQuery, Bootstrap 3.2.x
+=======
+>>>>>>> 04695283bf714250baad3723e07c7284d3003d81
  */
 (function ($) {
     'use strict';
 
-    var DataImg = function (element, options) {
+    var DataSrc = function (element, options) {
         var that = this;
 
         that.options = options;
         that.$element = $(element);
 
         if (that.options.inview) {
-            that.$element.on('inview.bs.dataimg', $.proxy(that.show, that));
+            that.$element.on('inview.bs.datasrc', $.proxy(that.show, that));
 
-            $(window).on('scroll.bs.dataimg resize.bs.dataimg lookup.bs.dataimg', function () {
+            $(window).on('scroll.bs.datasrc resize.bs.datasrc lookup.bs.datasrc', function () {
                 that.inview();
             });
 
@@ -27,33 +30,33 @@
 
             that.show();
         }
-    }; // DataImg
+    }; // DataSrc
 
-    DataImg.VERSION = '0.0.1';
+    DataSrc.VERSION = '0.0.1';
 
-    DataImg.DEFAULTS = {
+    DataSrc.DEFAULTS = {
         devices: ['xs', 'sm', 'md', 'lg'],
         inview: false,
         offset: 0, // used with inview
         resize: false
     };
 
-    DataImg.prototype.breakpoint = function () {
+    DataSrc.prototype.breakpoint = function () {
         var breakpoint = '';
 
         $.each(this.options.devices, function (key, device) {
-            if ($('<i class="visible-' + device + '-block dataimg-device"></i>').appendTo('body').is(':visible')) {
+            if ($('<i class="visible-' + device + '-block datasrc-device"></i>').appendTo('body').is(':visible')) {
                 breakpoint = device;
             }
         });
 
-        $('.dataimg-device').remove();
+        $('.datasrc-device').remove();
 
         return breakpoint;
     }; // breakpoint
 
-    DataImg.prototype.inview = function (offset) {
-        var e = $.Event('inview.bs.dataimg');
+    DataSrc.prototype.inview = function (offset) {
+        var e = $.Event('inview.bs.datasrc');
 
         if (this.$element.is(":hidden")) {
             return;
@@ -71,10 +74,10 @@
         }
     }; // inview
 
-    DataImg.prototype.show = function (_relatedTarget) {
+    DataSrc.prototype.show = function (_relatedTarget) {
         var that = this,
             transition = $.support.transition && that.$element.hasClass('fade'),
-            e = $.Event('show.bs.dataImg', {relatedTarget: _relatedTarget}),
+            e = $.Event('show.bs.dataSrc', {relatedTarget: _relatedTarget}),
             device = that.breakpoint(),
             src = that.$element.data(device);
 
@@ -105,7 +108,7 @@
             that.$element.css('background-image', 'url(' + src + ')');
         }
 
-        e = $.Event('shown.bs.dataImg', {relatedTarget: _relatedTarget});
+        e = $.Event('shown.bs.dataSrc', {relatedTarget: _relatedTarget});
 
         if (transition) {
             that.$element.one('bsTransitionEnd', function () {
@@ -116,16 +119,16 @@
         }
     }; // show
 
-    var old = $.fn.dataImg;
+    var old = $.fn.dataSrc;
 
-    $.fn.dataImg = function (option, _relatedTarget) {
+    $.fn.dataSrc = function (option, _relatedTarget) {
         return this.each(function () {
             var $this = $(this),
-                data = $this.data('bs.dataImg'),
-                options = $.extend({}, DataImg.DEFAULTS, $this.data(), typeof option == 'object' && option);
+                data = $this.data('bs.dataSrc'),
+                options = $.extend({}, DataSrc.DEFAULTS, $this.data(), typeof option == 'object' && option);
 
             if (!data) {
-                $this.data('bs.dataImg', (data = new DataImg(this, options)));
+                $this.data('bs.dataSrc', (data = new DataSrc(this, options)));
             }
 
             if (typeof option == 'string') {
@@ -134,12 +137,12 @@
                 data.show(_relatedTarget);
             }
         });
-    }; // $.fn.dataImg
+    }; // $.fn.dataSrc
 
-    $.fn.dataImg.Constructor = DataImg;
+    $.fn.dataSrc.Constructor = DataSrc;
 
-    $.fn.dataImg.noConflict = function () {
-        $.fn.dataImg = old;
+    $.fn.dataSrc.noConflict = function () {
+        $.fn.dataSrc = old;
 
         return this;
     };

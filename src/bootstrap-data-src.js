@@ -1,11 +1,3 @@
-/**
- * Created by monkeymonk on 29/04/14.
-<<<<<<< HEAD
- *
- * @denpency jQuery, Bootstrap 3.2.x
-=======
->>>>>>> 04695283bf714250baad3723e07c7284d3003d81
- */
 (function ($) {
     'use strict';
 
@@ -32,7 +24,7 @@
         }
     }; // DataSrc
 
-    DataSrc.VERSION = '0.0.1';
+    DataSrc.VERSION = '1.0.0';
 
     DataSrc.DEFAULTS = {
         devices: ['xs', 'sm', 'md', 'lg'],

@@ -13,6 +13,15 @@ This little script use the `Twitter Bootstrap` classes: `visible-*-block` to kno
 4. See `example.html` to know more
 
 
+## Options
+
+    {
+        inview: false,  // lazyload
+        offset: 0,      // used with inview
+        resize: false   // update src when resize event is fired
+    }
+
+
 
 ## Todo
 

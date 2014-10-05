@@ -17,10 +17,10 @@ module.exports = function (grunt) {
          * pairs are evaluated based on this very configuration object.
          */
         meta: {
-            banner: '/**'
-                + ' * <%= pkg.name %> - v<%= pkg.version %> - <%= grunt.template.today("yyyy-mm-dd") %>'
-                + ' * <%= pkg.homepage %>'
-                + ' * Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author.name %>'
+            banner: '/**\n'
+                + ' * <%= pkg.name %> - v<%= pkg.version %> - <%= grunt.template.today("yyyy-mm-dd") %>\n'
+                + ' * <%= pkg.homepage %>\n'
+                + ' * Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author.name %>\n'
                 + ' */\n'
         }, // meta
 

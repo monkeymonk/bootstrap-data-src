@@ -1,26 +1,18 @@
 {
-  "name": "bootstrap-data-img",
+  "name": "Bootstrap Data Src",
   "version": "1.0.0",
   "description": "Tiny jQuery plugin to deal with responsive image delivery using Bootstrap breakpoints.",
   "private": true,
   "homepage": "",
   "author": {
-    "name": "Cherry Pulp",
-    "email": "info@cherrypulp.com",
-    "url": "http://cherrypulp.com"
+    "name": "Stéphan Zych",
+    "email": "info@monkeymonk.be",
+    "url": "http://monkeymonk.be"
   },
   "contributors": [
     {
       "name": "Stéphan Zych",
-      "email": "stephan@cherrypulp.com"
-    },
-    {
-      "name": "Simon Vreux",
-      "email": "simon@cherrypulp.com"
-    },
-    {
-      "name": "Daniel Sum",
-      "email": "daniel@cherrypulp.com"
+      "email": "stephan@monkeymonk.be"
     }
   ],
   "repository": {

@@ -5,20 +5,34 @@
     'use strict';
 
     var DataImg = function (element, options) {
-        this.options = options;
-        this.$element = $(element);
+        var that = this;
 
-        if (this.options.resize) {
-            $(window).on('resize', $.proxy(this.show, this));
+        that.options = options;
+        that.$element = $(element);
+
+        if (that.options.inview) {
+            that.$element.on('inview.bs.dataimg', $.proxy(that.show, that));
+
+            $(window).on('scroll.bs.dataimg resize.bs.dataimg lookup.bs.dataimg', function () {
+                that.inview();
+            });
+
+            that.inview();
+        } else {
+            if (that.options.resize) {
+                $(window).on('resize', $.proxy(that.show, that));
+            }
+
+            that.show();
         }
-
-        this.show();
     }; // DataImg
 
     DataImg.VERSION = '0.0.1';
 
     DataImg.DEFAULTS = {
         devices: ['xs', 'sm', 'md', 'lg'],
+        inview: false,
+        offset: 0, // used with inview
         resize: false
     };
 
@@ -35,6 +49,25 @@
 
         return breakpoint;
     }; // breakpoint
+
+    DataImg.prototype.inview = function (offset) {
+        var e = $.Event('inview.bs.dataimg');
+
+        if (this.$element.is(":hidden")) {
+            return;
+        }
+
+        offset = offset || this.options.offset;
+
+        var wTop = $(window).scrollTop(),
+            wBottom = wTop + $(window).height(),
+            elTop = this.$element.offset().top,
+            elBottom = elTop + this.$element.height();
+
+        if (elBottom >= wTop - offset && elTop <= wBottom + offset) {
+            this.$element.trigger(e);
+        }
+    }; // inview
 
     DataImg.prototype.show = function (_relatedTarget) {
         var that = this,

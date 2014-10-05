@@ -1,6 +1,7 @@
 {
   "name": "Bootstrap Data Src",
   "version": "1.0.0",
+  "main": "dist/bootstrap-data-src.js",
   "ignore": [
     "**/.*",
     "node_modules",

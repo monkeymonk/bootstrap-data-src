@@ -4,7 +4,7 @@ bootstrap-data-img
 Tiny jQuery plugin to deal with responsive image delivery using Bootstrap breakpoints.
 
 
-## Use (see `demo/index.html`)
+usage -> see `demo/index.html`
 
 
 

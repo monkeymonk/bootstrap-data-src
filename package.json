@@ -1,0 +1,47 @@
+{
+  "name": "bootstrap-data-src",
+  "version": "0.0.1-1",
+  "description": "Tiny jQuery plugin to deal with responsive image delivery using Bootstrap breakpoints.",
+  "private": true,
+  "homepage": "",
+  "author": {
+    "name": "Cherry Pulp",
+    "email": "info@cherrypulp.com",
+    "url": "http://cherrypulp.com"
+  },
+  "contributors": [
+    {
+      "name": "Stéphan Zych",
+      "email": "stephan@cherrypulp.com"
+    },
+    {
+      "name": "Simon Vreux",
+      "email": "simon@cherrypulp.com"
+    },
+    {
+      "name": "Daniel Sum",
+      "email": "daniel@cherrypulp.com"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/monkeymonk/bootstrap-data-img.git"
+  },
+  "devDependencies": {
+    "bower": "~1.2.8",
+    "grunt": "^0.4.5",
+    "grunt-contrib-concat": "~0.3.0",
+    "grunt-contrib-uglify": "~0.4",
+    "grunt-contrib-watch": "~0.6",
+    "grunt-html-build": "^0.3.2",
+    "grunt-notify": "*",
+    "grunt-todo": "~0.2",
+    "matchdep": "~0.3",
+    "time-grunt": "~0.4.0"
+  },
+  "dependencies": {
+  },
+  "scripts": {
+    "install": "bower install"
+  }
+}

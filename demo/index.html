@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Data Src - example</title>
+
+    <link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+    <style>
+    .thumbnail.datasrc {
+        background-position: 50% 50%;
+        background-size: cover;
+        padding-bottom: 56.25%;
+        position: relative;
+    }
+    .thumbnail.datasrc .caption {
+        background-color: rgba(0, 0, 0, 0.4);
+        bottom: 5px;
+        color: #fff;
+        left: 5px;
+        position: absolute;
+        right: 5px;
+    }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+
+                <div class="thumbnail">
+                    <img class="center-block img-responsive fade datasrc" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt=""
+                        data-xs="http://lorempixel.com/480/270/food/1"
+                        data-sm="http://lorempixel.com/768/432/people/1"
+                        data-md="http://lorempixel.com/992/558/sports/1"
+                        data-lg="http://lorempixel.com/1200/675/city/1"
+                    />
+
+                    <div class="caption">
+                        <p class="visible-xs-block">Phone - XS - Food</p>
+                        <p class="visible-sm-block">Tablet - SM - People</p>
+                        <p class="visible-md-block">Desktop - MD - Sports</p>
+                        <p class="visible-lg-block">LG Desktop - LG - City</p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-sm-6">
+
+                <div class="thumbnail fade datasrc"
+                    data-xs="http://lorempixel.com/480/270/food/2"
+                    data-sm="http://lorempixel.com/768/432/people/2"
+                    data-md="http://lorempixel.com/992/558/sports/2"
+                    data-lg="http://lorempixel.com/1200/675/city/2"
+                >
+                    <div class="caption">
+                        <p class="visible-xs-block">Phone - XS - Food</p>
+                        <p class="visible-sm-block">Tablet - SM - People</p>
+                        <p class="visible-md-block">Desktop - MD - Sports</p>
+                        <p class="visible-lg-block">LG Desktop - LG - City</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="../src/bootstrap-data-img.js"></script>
+    <script>
+    $(document).ready(function () {
+        $('.datasrc').dataImg({
+            resize: true
+        });
+    });
+    </script>
+</body>
+</html>

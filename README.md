@@ -10,5 +10,5 @@ Tiny jQuery plugin to deal with responsive image delivery using Bootstrap breakp
 
 ## Todo
 
-- [] refactor code
-- [] add lazyload capability
+- [ ] refactor code
+- [x] add lazyload capability

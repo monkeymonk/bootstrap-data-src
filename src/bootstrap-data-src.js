@@ -2,25 +2,25 @@
     'use strict';
 
     var DataSrc = function (element, options) {
-        var that = this;
+        var _this = this;
 
-        that.options = options;
-        that.$element = $(element);
+        _this.options = options;
+        _this.$element = $(element);
 
-        if (that.options.inview) {
-            that.$element.on('inview.bs.datasrc', $.proxy(that.show, that));
+        if (_this.options.inview) {
+            _this.$element.on('inview.bs.datasrc', $.proxy(_this.show, _this));
 
             $(window).on('scroll.bs.datasrc resize.bs.datasrc lookup.bs.datasrc', function () {
-                that.inview();
+                _this.inview();
             });
 
-            that.inview();
+            _this.inview();
         } else {
-            if (that.options.resize) {
-                $(window).on('resize', $.proxy(that.show, that));
+            if (_this.options.resize) {
+                $(window).on('resize', $.proxy(_this.show, _this));
             }
 
-            that.show();
+            _this.show();
         }
     }; // DataSrc
 
@@ -67,47 +67,47 @@
     }; // inview
 
     DataSrc.prototype.show = function (_relatedTarget) {
-        var that = this,
-            transition = $.support.transition && that.$element.hasClass('fade'),
+        var _this = this,
+            transition = $.support.transition && _this.$element.hasClass('fade'),
             e = $.Event('show.bs.dataSrc', {relatedTarget: _relatedTarget}),
-            device = that.breakpoint(),
-            src = that.$element.data(device);
+            device = _this.breakpoint(),
+            src = _this.$element.data(device);
 
-        that.$element.trigger(e);
+        _this.$element.trigger(e);
 
-        if (that.$element.is('img')) {
-            if (transition && that.$element.attr('src') !== src) {
-                that.$element.removeClass('in')
+        if (_this.$element.is('img')) {
+            if (transition && _this.$element.attr('src') !== src) {
+                _this.$element.removeClass('in')
                 .one('load', function () {
-                    that.$element.addClass('in');
+                    _this.$element.addClass('in');
                 });
             }
 
-            that.$element.attr('src', src);
+            _this.$element.attr('src', src);
         } else {
-            if (transition && that.$element.css('background-image') !== src) {
-                that.$element.removeClass('in');
+            if (transition && _this.$element.css('background-image') !== src) {
+                _this.$element.removeClass('in');
 
                 var img = new Image();
 
                 $(img).one('load', function () {
-                    that.$element.addClass('in');
+                    _this.$element.addClass('in');
                 });
 
                 img.src = src;
             }
 
-            that.$element.css('background-image', 'url(' + src + ')');
+            _this.$element.css('background-image', 'url(' + src + ')');
         }
 
         e = $.Event('shown.bs.dataSrc', {relatedTarget: _relatedTarget});
 
         if (transition) {
-            that.$element.one('bsTransitionEnd', function () {
-                that.$element.trigger(e);
+            _this.$element.one('bsTransitionEnd', function () {
+                _this.$element.trigger(e);
             });
         } else {
-            that.$element.trigger(e);
+            _this.$element.trigger(e);
         }
     }; // show
 
